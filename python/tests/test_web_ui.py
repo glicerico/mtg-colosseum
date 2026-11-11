@@ -3,7 +3,7 @@
 The page is served from web/ through Playwright routes and its WebSocket is mocked: each test plays back real
 seat-0 messages recorded from an engine game (fixtures/ui_board.json; see its "_source"), so no server is needed.
 
-    pip install playwright pytest && playwright install chromium
+    pip install "playwright>=1.65.0" pytest && playwright install chromium
     python -m pytest python/tests -m ui
 """
 import base64
