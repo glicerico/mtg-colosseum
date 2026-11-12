@@ -14,7 +14,9 @@ dependencies = ["websockets>=12"]
 [project.optional-dependencies]
 llm = ["anthropic"]
 dev = ["pytest", "pytest-timeout"]
-ui = ["pytest", "playwright"]
+# playwright>=1.65.0: earlier releases bundle Chromium builds missing the fixes for
+# CVE-2026-118306, -118331, -118344, -118348 (fixed in Chromium 156.0.8078.73; 1.65.0 bundles 158.0.8127.18)
+ui = ["pytest", "playwright>=1.65.0"]
 
 [project.scripts]
 colosseum = "colosseum.cli:main"
